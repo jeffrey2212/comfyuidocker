@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  comfyui:
+    build: .
+    image: jeffrey2212/comfyuidocker:latest
+    ports:
+      - "8188:8188"
+    volumes:
+      - models_volume:/app/models
+      - output_volume:/app/output 
+    networks:
+      - comfy_network
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+
+volumes:
+  models_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: models
+  output_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: output
+
+networks:
+  comfy_network:
+    driver: bridge
+
