@@ -5,7 +5,7 @@ FROM pytorch/pytorch:2.2.1-cuda12.1-cudnn8-runtime
 RUN apt-get update && apt-get install -y \
     git \
     build-essential \ 
-    ffmpeg libsm6 libxext6  \
+    ffmpeg libsm6 libxext6 
 # Clone the specific repository
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /app
 
@@ -54,6 +54,16 @@ RUN git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 # https://github.com/jags111/efficiency-nodes-comfyui
 RUN git clone https://github.com/jags111/efficiency-nodes-comfyui && \
     pip install --no-cache-dir -r efficiency-nodes-comfyui/requirements.txt
+
+# ComfyUI-MotionCtrl-SVD
+# https://github.com/chaojie/ComfyUI-MotionCtrl-SVD
+RUN git clone https://github.com/chaojie/ComfyUI-MotionCtrl-SVD && \
+    pip install --no-cache-dir -r ComfyUI-MotionCtrl-SVD/requirements.txt
+
+# ComfyUI-MotionCtrl
+# https://github.com/chaojie/ComfyUI-MotionCtrl
+RUN git clone https://github.com/chaojie/ComfyUI-MotionCtrl && \
+    pip install --no-cache-dir -r ComfyUI-MotionCtrl/requirements.txt
 
 # ComfyUI-AnimateDiff-Evolved
 # https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved
