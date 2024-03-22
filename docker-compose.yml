@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   comfyui:
@@ -8,16 +8,17 @@ services:
       - "8188:8188"
     volumes:
       - models_volume:/app/models
-      - output_volume:/app/output 
+      - output_volume:/app/output
+      - workflow_volume:/app/my_workflows
     networks:
       - comfy_network
     deploy:
       resources:
         reservations:
           devices:
-          - driver: nvidia
-            count: all
-            capabilities: [gpu]
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
 volumes:
   models_volume:
@@ -32,8 +33,13 @@ volumes:
       o: bind
       type: none
       device: output
+  workflow_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: workflows
 
 networks:
   comfy_network:
     driver: bridge
-
