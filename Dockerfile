@@ -54,16 +54,6 @@ RUN git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 RUN git clone https://github.com/jags111/efficiency-nodes-comfyui && \
     pip install --no-cache-dir -r efficiency-nodes-comfyui/requirements.txt
 
-# ComfyUI-MotionCtrl-SVD
-# https://github.com/chaojie/ComfyUI-MotionCtrl-SVD
-RUN git clone https://github.com/chaojie/ComfyUI-MotionCtrl-SVD && \
-    pip install --no-cache-dir -r ComfyUI-MotionCtrl-SVD/requirements.txt
-
-# ComfyUI-MotionCtrl
-# https://github.com/chaojie/ComfyUI-MotionCtrl
-RUN git clone https://github.com/chaojie/ComfyUI-MotionCtrl && \
-    pip install --no-cache-dir -r ComfyUI-MotionCtrl/requirements.txt
-
 # ComfyUI-AnimateDiff-Evolved
 # https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved
 RUN git clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved 
