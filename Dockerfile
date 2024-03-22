@@ -15,7 +15,7 @@ WORKDIR /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Install xformers 
-RUN pip install xformers
+RUN pip install xformers 
 
 # Install custom_nodes
 # ComfyUI-Manager 
@@ -53,11 +53,6 @@ RUN git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 # https://github.com/jags111/efficiency-nodes-comfyui
 RUN git clone https://github.com/jags111/efficiency-nodes-comfyui && \
     pip install --no-cache-dir -r efficiency-nodes-comfyui/requirements.txt
-
-# ComfyUI-YoloWorld-EfficientSAM
-# https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM
-RUN git clone https://github.com/ZHO-ZHO-ZHO/ComfyUI-YoloWorld-EfficientSAM && \
-    pip install --no-cache-dir -r ComfyUI-YoloWorld-EfficientSAM/requirements.txt
 
 # Expose the port your app runs on
 EXPOSE 8188
