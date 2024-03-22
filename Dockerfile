@@ -4,7 +4,8 @@ FROM pytorch/pytorch:2.2.1-cuda12.1-cudnn8-runtime
 # Install git
 RUN apt-get update && apt-get install -y \
     git \
-    build-essential
+    build-essential \ 
+    ffmpeg libsm6 libxext6  \
 # Clone the specific repository
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /app
 
