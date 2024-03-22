@@ -66,8 +66,25 @@ RUN git clone https://github.com/chaojie/ComfyUI-MotionCtrl && \
 
 # ComfyUI-AnimateDiff-Evolved
 # https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved
-RUN git clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved && \
-    pip install --no-cache-dir -r ComfyUI-AnimateDiff-Evolved/requirements.txt
+RUN git clone https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved 
+
+# ComfyUI_FizzNodes
+# https://github.com/FizzleDorf/ComfyUI_FizzNodes
+RUN git clone https://github.com/FizzleDorf/ComfyUI_FizzNodes && \
+    pip install --no-cache-dir -r ComfyUI_FizzNodes/requirements.txt
+
+# https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet 
+RUN git clone https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet && \
+    pip install --no-cache-dir -r ComfyUI-Advanced-ControlNet/requirements.txt
+
+#https://github.com/Fannovel16/comfyui_controlnet_aux
+RUN git clone https://github.com/Fannovel16/comfyui_controlnet_aux && \ 
+    pip install --no-cache-dir -r comfyui_controlnet_aux/requirements.txt
+
+# https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+RUN git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite && \
+    pip install --no-cache-dir -r  ComfyUI-VideoHelperSuite/requirements.txt
+
 
 # Expose the port your app runs on
 EXPOSE 8188
